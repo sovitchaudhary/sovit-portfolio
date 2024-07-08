@@ -5,7 +5,7 @@ import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
 
-import resume from "../public/assets/resume/sovit_chaudhary.pdf";
+import resume from "../public/sovit_chaudhary.pdf";
 
 const Home = () => {
   return (

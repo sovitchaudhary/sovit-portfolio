@@ -16,7 +16,7 @@ const Home = () => {
             <h1 className="h1 mb-6">
               Hello I'm <br /> <span className="text-accent">Sovit Chaudhary</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[500px] mb-9 text-white/80 text-justify">
               I am Persuing Bachelor of Technology in Computer Science and Engineering 4th year. I
               am Passionate on Software developer who is passionate about building technology to
               elevate people, making contributing to the open-source more approachable and building

@@ -1,4 +1,23 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import withPlugins from 'next-compose-plugins';
+import withImages from 'next-images';
 
-export default nextConfig;
+const nextConfig = {
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(pdf)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        },
+      ],
+    });
+
+    return config;
+  },
+};
+
+export default withPlugins([[withImages]], nextConfig);

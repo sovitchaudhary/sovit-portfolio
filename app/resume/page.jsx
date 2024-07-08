@@ -1,6 +1,17 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaPhp, FaWordpress, FaReact, FaNodeJs } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaPhp,
+  FaWordpress,
+  FaReact,
+  FaNodeJs,
+  FaAngular,
+  FaBootstrap,
+  FaGithub,
+} from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 //about data
@@ -82,7 +93,8 @@ const experience = {
 const education = {
   icon: "",
   title: "My education",
-  description: "Currently, I am Persuing Bachlor in Technology in Computer Science and Emgineering. ",
+  description:
+    "Currently, I am Persuing Bachlor in Technology in Computer Science and Emgineering. ",
   items: [
     {
       institution: "Tula's Institute, Dehradun",
@@ -109,7 +121,11 @@ const skills = {
     },
     {
       icon: <FaCss3 />,
-      name: "CSS3",
+      name: "CSS 3",
+    },
+    {
+      icon: <FaBootstrap />,
+      name: "Bootstrap",
     },
     {
       icon: <FaJs />,
@@ -128,6 +144,10 @@ const skills = {
       name: "React",
     },
     {
+      icon: <FaAngular />,
+      name: "Anguler",
+    },
+    {
       icon: <FaNodeJs />,
       name: "Node.Js",
     },
@@ -138,6 +158,10 @@ const skills = {
     {
       icon: <SiNextdotjs />,
       name: "Next.js",
+    },
+    {
+      icon: <FaGithub />,
+      name: "Github",
     },
   ],
 };
@@ -212,7 +236,7 @@ const Resume = () => {
                 </p>
                 <ScrollArea className="h-[400px] ">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] ">
-                    {education .items.map((item, index) => {
+                    {education.items.map((item, index) => {
                       return (
                         <li
                           key={index}
@@ -225,7 +249,7 @@ const Resume = () => {
                           <div className="flex items-center gap-3">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full mt-6 bg-accent "></span>
-                            <p className="text-white/60 w-[300px] pt-6"  >{item.institution}</p>
+                            <p className="text-white/60 w-[300px] pt-6">{item.institution}</p>
                           </div>
                         </li>
                       );
@@ -234,10 +258,39 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+
             {/* skills */}
-            <TabsContent value="skills" className="w-full">
-              skills
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px] ">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold ">{skills.title}</h3>
+                  <p className="max-w-[700px] text-white/60 text-justify mx-auto xl:mx-0 ">
+                    {skills.description}
+                  </p>
+                </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.skillList.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="capitalize text-accent-hover">{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </TabsContent>
+
             {/* about */}
             <TabsContent value="about" className="w-full">
               about

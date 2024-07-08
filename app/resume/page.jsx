@@ -15,8 +15,7 @@ import {
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
 //about data
-const about = [
-  {
+const about = {
     title: "About me",
     description:
       "I am Persuing Bachelor of Technology in Computer Science and Engineering 4th year. I am Passionate on Software developer who is passionate about building technology to elevate people, making contributing to the open-source more approachable and building community, online and offline.",
@@ -34,10 +33,6 @@ const about = [
         fieldValue: "sovitchaudhary45@gmail.com",
       },
       {
-        fieldName: "Experiance",
-        fieldValue: "Fresher",
-      },
-      {
         fieldName: "Nationality",
         fieldValue: "Nepalese",
       },
@@ -45,9 +40,10 @@ const about = [
         fieldName: "Languages",
         fieldValue: "English, Hindi, Nepali",
       },
+      
+
     ],
-  },
-];
+};
 
 //experience data
 const experience = {
@@ -292,8 +288,19 @@ const Resume = () => {
             </TabsContent>
 
             {/* about */}
-            <TabsContent value="about" className="w-full">
-              about
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0 text-justify ">{about.description}</p>
+                <ul className="grid grid-cols-1 xl:grid-cols-1 gap-y-6 max-w-[900px] mx-auto xl:mx-0">
+                  {about.info.map((item, index)=>{
+                    return <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                      <span className="text-white/60">{item.fieldName}</span>
+                      <span className="text-xl">{item.fieldValue}</span>
+                    </li>
+                  })}
+                </ul>
+              </div>
             </TabsContent>
           </div>
         </Tabs>

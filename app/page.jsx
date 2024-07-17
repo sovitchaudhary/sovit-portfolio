@@ -5,8 +5,6 @@ import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
 
-import resume from "../public/sovit_chaudhary.pdf";
-
 const Home = () => {
   return (
     <section className="h-full">
@@ -26,12 +24,12 @@ const Home = () => {
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Link to="https://res.cloudinary.com/ddk6fd8yu/image/upload/v1721249826/sovit_chaudhary_page-0001_qjfnrc.jpg" target="_blank">
+              <a href="https://res.cloudinary.com/ddk6fd8yu/image/upload/v1721249826/sovit_chaudhary.jpg" download="sovitchaudhary">
                 <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />
                 </Button>
-              </Link>
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
